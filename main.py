@@ -28,8 +28,8 @@ for sub in "qwertyuiopasdfghjklzxcvbnm":
         else:
             now_data.append(video_data)
 
-    with lzma.open(f"{sub}.p.xz", "w") as f:
+    with lzma.open(f"lzma_compressed/{sub}.p.xz", "w") as f:
         pickle.dump(now_data, f)
 
-with lzma.open("no_label.p.xz", "w") as f:
+with lzma.open("lzma_compressed/no_label.p.xz", "w") as f:
     pickle.dump(no_label, f)
