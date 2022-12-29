@@ -1,10 +1,9 @@
 from cv2 import cv2
-import skvideo.io
+import pickle
+import lzma
 
-size = 700
-dx = 580
-dy = 300
-video_data = skvideo.io.vread(r"C:\Users\Tom\Videos\clips\g\g_clips00000109.mov", as_grey=True)
-cv2.imshow("", video_data[0, dy:dy+size, dx:dx+size, :])
+with lzma.open(r"lzma_compressed/a.p.xz", "r") as f:
+    a = pickle.load(f)
 
+cv2.imshow("", a[0][0])
 cv2.waitKey(0)
